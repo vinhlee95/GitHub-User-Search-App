@@ -8,7 +8,12 @@ class SearchResults extends Component {
       return user.items.map(item => {
          // console.log(item);
          return(
-            <SearchItem key={item.id} name={item.login} src={item.avatar_url} alt={item.login}/>
+            <SearchItem 
+               key={item.id} 
+               name={item.login} 
+               src={item.avatar_url} 
+               alt={item.login}
+               profileLink={item.html_url}/>
          );
       })
    }
