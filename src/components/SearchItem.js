@@ -2,9 +2,9 @@ import React from 'react';
 
 const SearchItem = ({ name, src, alt }) => {
    return(
-      <div>
+      <div className="user-item">
          <p>{name}</p>
-         <img src={src} alt={alt} style={{width: '50px', height: '50px'}} />
+         <img src={src} alt={alt} style={{width: '80px', height: '80px'}} />
       </div>
    );
 }

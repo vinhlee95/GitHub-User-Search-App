@@ -18,15 +18,16 @@ class SearchForm extends Component {
 
    render() {
       return(
-         <div>
+         <div className="search-form">
             <form onSubmit={this.handleSubmit.bind(this)}>
                <input 
                   type="text"
                   placeholder="User Name"
                   onChange={e => this.handleChange(e)}
                   value={this.state.term}
+                  className="input-form"
                />
-               <button type="submit">Search</button>
+               <button type="submit" className="btn">Search</button>
             </form>
          </div>
       );
