@@ -4,10 +4,14 @@ const ROOT_URL = "https://api.github.com/search/users";
 
 export const fetchUsers = (user) => {
    const url = `${ROOT_URL}?q=${user}`;
-   const request = axios.get(url);
 
-   return {
-      type: FETCH_USERS,
-      payload: request
+   //implementing redux thunk
+   return (dispatch) => {
+      axios.get(url).then(response => {
+         dispatch({
+            type: FETCH_USERS,
+            payload: response
+         })
+      });
    }
 }

@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import ReduxPromise from 'redux-promise';
+import ReduxThunk from 'redux-thunk';
 import rootReducer from './reducers';
  
 import logo from './images/github.png';
 import SearchForm from './components/SearchForm';
 import SearchResults from './components/SearchResults';
 
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 class App extends Component {
   render() {
+    const store = createStore(rootReducer, {}, applyMiddleware(ReduxThunk));
     return (
-      <Provider store = {createStoreWithMiddleware(rootReducer)}>
+      <Provider store = {store}>
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
